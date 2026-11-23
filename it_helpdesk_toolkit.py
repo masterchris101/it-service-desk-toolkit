@@ -194,7 +194,9 @@ def cmd_w365(a):
     elif a.action in ("restart", "reprovision", "deprovision"):
         status = {"restart": "Running", "reprovision": "Provisioning",
                   "deprovision": "Deprovisioned"}[a.action]
-        con.execute("UPDATE cloudpcs SET status=? WHERE id=?", (status, a.id))
+        cur = con.execute("UPDATE cloudpcs SET status=? WHERE id=?", (status, a.id))
+        if cur.rowcount == 0:
+            raise SystemExit(f"Cloud PC CPC-{a.id:03d} not found.")
         con.commit()
         print(f"CPC-{a.id:03d}: {a.action} -> {status}")
 
