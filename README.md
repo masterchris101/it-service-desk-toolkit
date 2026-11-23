@@ -4,6 +4,10 @@ A **Python command-line IT help desk simulator** for practicing common service d
 
 **Important:** This is a local simulation for learning and portfolio demonstration. It does **not** connect to ServiceNow, Microsoft Intune, Cisco, or Windows 365 APIs.
 
+## Try a service desk shift
+
+[Open the endpoint triage lab in Google Colab](https://colab.research.google.com/github/masterchris101/it-service-desk-toolkit/blob/9b6c72ce8da9650ad24d24c500f8d9178eed4a3c/endpoint-triage.ipynb) or open [the notebook](endpoint-triage.ipynb) locally in Jupyter. Connect a Python runtime and run the cells in order. Identify a laptop with disk encryption turned off, open an incident for its owner, and write the next technician a handoff. The lab checks the saved ticket in a temporary database and includes a feedback link if you get stuck.
+
 ## Features
 
 - **Incident ticketing:** Create, list, update, and close tickets, with priority calculated from impact and urgency and simulated SLA deadlines.
